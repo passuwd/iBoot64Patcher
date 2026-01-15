@@ -28,6 +28,8 @@ jobs:
           options: -v ${{ github.workspace }}/..:/tmp/Builder/repos/
           run: |
             /tmp/Builder/repos/iBoot64Patcher/.github/workflows/linux-bootstrap.sh
+            export CC=clang-14
+            export CXX=clang++-14
             /tmp/Builder/repos/iBoot64Patcher/.github/workflows/linux-build.sh
             /tmp/Builder/repos/iBoot64Patcher/.github/workflows/linux-post.sh
       - name: Linux x86_64 RELEASE Build
@@ -42,7 +44,7 @@ jobs:
           docker cp $(docker ps -ql):/tmp/Builder/repos/iBoot64Patcher/.github/workflows/name2.txt /home/runner/work/iBoot64Patcher/iBoot64Patcher/.github/workflows/
           docker cp $(docker ps -ql):/tmp/Builder/repos/iBoot64Patcher/.github/workflows/iBoot64Patcher2.tar.xz /home/runner/work/iBoot64Patcher/iBoot64Patcher/.github/workflows/
           mv /home/runner/work/iBoot64Patcher/iBoot64Patcher/.github/workflows/iBoot64Patcher2.tar.xz /home/runner/work/iBoot64Patcher/iBoot64Patcher/.github/workflows/$(cat /home/runner/work/iBoot64Patcher/iBoot64Patcher/.github/workflows/name2.txt)
-      - name: iBoot64Patcher Linux x86_64 RELEASE Archive
+      - name: iBoot64Patcher Linux x86_64 RELEASE Archive#!/usr/bin/env 
         id: iBoot64Patcher-Linux-x86_64-RELEASE-Archive
         uses: actions/upload-artifact@v4
         with:
