@@ -24,7 +24,7 @@ jobs:
         id: Linux
         uses: addnab/docker-run-action@v3
         with:
-          image: debian:buster-slim
+          image: debian:bookworm-slim
           options: -v ${{ github.workspace }}/..:/tmp/Builder/repos/
           run: |
             /tmp/Builder/repos/iBoot64Patcher/.github/workflows/linux-bootstrap.sh
