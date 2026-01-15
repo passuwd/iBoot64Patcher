@@ -44,13 +44,13 @@ jobs:
           mv /home/runner/work/iBoot64Patcher/iBoot64Patcher/.github/workflows/iBoot64Patcher2.tar.xz /home/runner/work/iBoot64Patcher/iBoot64Patcher/.github/workflows/$(cat /home/runner/work/iBoot64Patcher/iBoot64Patcher/.github/workflows/name2.txt)
       - name: iBoot64Patcher Linux x86_64 RELEASE Archive
         id: iBoot64Patcher-Linux-x86_64-RELEASE-Archive
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: iBoot64Patcher-Linux-x86_64-RELEASE
           path: /home/runner/work/iBoot64Patcher/iBoot64Patcher/.github/workflows/iBoot64Patcher-Linux-x86_64*-RELEASE.tar.xz
       - name: iBoot64Patcher Linux x86_64 DEBUG Archive
         id: iBoot64Patcher-Linux-x86_64-DEBUG-Archive
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: iBoot64Patcher-Linux-x86_64-DEBUG
           path: /home/runner/work/iBoot64Patcher/iBoot64Patcher/.github/workflows/iBoot64Patcher-Linux-x86_64*-DEBUG.tar.xz
